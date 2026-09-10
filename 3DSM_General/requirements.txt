@@ -1,0 +1,14 @@
+# Slicer の Python (PythonSlicer.exe) に入れる nnU-Net v2 推論用パッケージ。
+# 通常の Python 環境用ではない。tools\install_nnunet.cmd が
+#   PythonSlicer.exe -m pip install -r requirements.txt
+# を実行する。Slicer 5.8.1 (Python 3.9) + nnunetv2 2.5.2 + torch 2.8.0 (CUDA 12.6) で動作確認。
+#
+# GPU が無い / NVIDIA ドライバが CUDA 12 に対応していない PC では、
+# 下の 2 行を  torch==2.8.0  (PyPI の CPU 版) に置き換える。
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch==2.8.0+cu126
+
+nnunetv2==2.5.2
+
+# Slicer 5.8 の VTK / SimpleITK は numpy 1.x 向けにビルドされているので 2.x に上げない
+numpy<2

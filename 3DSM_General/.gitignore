@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# nnU-Net の学習済み重み (数百 MB) はリポジトリに入れない
+*.pth
+
+# nnU-Net 学習結果に含まれるが推論に不要なもの
+dataset_fingerprint.json
+training_log_*.txt
+progress.png
+**/nnUNet_results/**/validation/
+
+# Slicer / 一時ファイル
+*.seg.nrrd
+*.orig
